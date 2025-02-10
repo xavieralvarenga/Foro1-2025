@@ -22,20 +22,30 @@ public class Menu {
                 System.out.println("4. Mostrar todos los alumnos ingresados al sistema.");
                 System.out.println("5. Salir del sistema.");
                 System.out.print("Respuesta: ");
-                int inputUser = input.nextInt();
-                entradaValida = true;
-                switch (inputUser) {
-                    case 1:
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        option = true;
-                        break;
+
+                //Validación de opciones del menu (1 al 5)
+                try {
+                    int inputUser = input.nextInt();
+                    if (inputUser >= 1 && inputUser <= 5){
+                        entradaValida = true;
+                    }else {
+                        System.out.println("\n Número fuera de rango. Ingresar valores del 1 al 5. \n");
+                    }
+                    switch (inputUser) {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            option = true;
+                            break;
+                    }
+                }catch (NumberFormatException e){
+                    System.out.println("Entrada inválida. Por favor ingresa un valor entre 1 y 5.");
                 }
             } catch (InputMismatchException e) { //Excepción para manejar datos diferentes a los esperados
                 System.out.println("\nEntrada inválida. Por favor ingresar un valor entero.\n");
