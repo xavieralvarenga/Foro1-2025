@@ -41,6 +41,7 @@ public class menu {
                             AlumnoHashMap.agregarAlumno(nuevoAlumno);
                             System.out.println("Alumno agregado exitosamente.\n");
                         }
+                        break;
                     case 2:
 
                         break;
