@@ -24,4 +24,5 @@ public class Alumno {
     public void setCarnet(String carnet) {
         this.carnet = carnet;
     }
+
 }
