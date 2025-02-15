@@ -52,7 +52,7 @@ public class AlumnoDesarrollo {
         System.out.println("\n");
         for (Map.Entry<String, Alumno> entry :  alumnosMap.entrySet()){
             String showCarnetAlumno = entry.getKey(); //Traer el carnet del alumno
-            String showNombreAlumno = entry.getValue().getCarnet(); //Traer el nombre del alumno
+            String showNombreAlumno = entry.getValue().getName(); //Traer el nombre del alumno
             System.out.println("Carnet: "+ showCarnetAlumno + " | " + "Nombre: " + showNombreAlumno);
         }
         System.out.println("\n");
