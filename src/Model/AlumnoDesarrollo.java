@@ -37,4 +37,17 @@ public class AlumnoDesarrollo {
             System.out.println("\nCarnet: "+ showCarnetAlumno + " | " + "Nombre: " + showNombreAlumno + "\n");
         }
     }
+    //Método para buscar alumno por medio de su numero de carnet
+    Public static void BuscarAlumno(){
+     System.out.print("Ingrese el número de carnet del alumno que desea buscar: ");
+        String buscarAlumno = input.nextLine();
+        
+        if (alumnosMap.containsKey(buscarAlumno)) {
+
+Alumno alumno = alumnosMap.get(buscarAlumno);          
+System.out.println("El alumno con numero de carnet " + alumno.getCarnet + " está registrado como: " + alumno.getNombre()+"\n");
+        } else {
+System.out.print("Alumno no encontrado, no se puede Mostrar.");
+       }
+    }
 }
