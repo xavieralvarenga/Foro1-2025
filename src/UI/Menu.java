@@ -30,8 +30,10 @@ public class Menu {
                             AlumnoDesarrollo.agregarAlumno();
                             break;
                         case 2:
+                            AlumnoDesarrollo.BuscarAlumno();
                             break;
                         case 3:
+                            AlumnoDesarrollo.eliminarAlumno();
                             break;
                         case 4:
                             AlumnoDesarrollo.mostrarAlumnosTemporal();

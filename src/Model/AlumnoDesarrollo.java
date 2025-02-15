@@ -1,6 +1,6 @@
 package Model;
 
-import javax.xml.transform.Source;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -11,8 +11,8 @@ public class AlumnoDesarrollo {
 
     //Método agregar alumnos a el arreglo HashMap
     public static void agregarAlumno() {
-
         boolean validarAlumno = false;
+
         while (!validarAlumno){
             System.out.print("Por favor ingrese el carnet del estudiante: ");
             String carnetAlumnoinput = input.nextLine();
@@ -29,25 +29,52 @@ public class AlumnoDesarrollo {
         }
     }
 
+    public static void eliminarAlumno(){
+        boolean validarAlumno = false;
+
+        while(!validarAlumno){
+            System.out.print("Por favor ingrese el carnet del estudiante a eliminar: ");
+            String carnetAlumnoinput = input.nextLine();
+
+            //No necesita iterar, el tipo HashMap permite borrar directamente por clave
+            if (alumnosMap.containsKey(carnetAlumnoinput)){
+                alumnosMap.remove(carnetAlumnoinput);
+                System.out.println("\nAlumno eliminado de manera exitosa.\n");
+                validarAlumno = true;
+            }else {
+                System.out.println("Alumno no encontrado. Pruebe de nuevo.");
+            }
+        }
+    }
+
     //Método temporal para mostrar el arreglo y verificar funcionalidades
     public static void mostrarAlumnosTemporal(){
+        System.out.println("\n");
         for (Map.Entry<String, Alumno> entry :  alumnosMap.entrySet()){
             String showCarnetAlumno = entry.getKey(); //Traer el carnet del alumno
             String showNombreAlumno = entry.getValue().getCarnet(); //Traer el nombre del alumno
-            System.out.println("\nCarnet: "+ showCarnetAlumno + " | " + "Nombre: " + showNombreAlumno + "\n");
+            System.out.println("Carnet: "+ showCarnetAlumno + " | " + "Nombre: " + showNombreAlumno);
         }
+        System.out.println("\n");
     }
-    //Método para buscar alumno por medio de su numero de carnet
-    Public static void BuscarAlumno(){
-     System.out.print("Ingrese el número de carnet del alumno que desea buscar: ");
-        String buscarAlumno = input.nextLine();
-        
-        if (alumnosMap.containsKey(buscarAlumno)) {
 
-Alumno alumno = alumnosMap.get(buscarAlumno);          
-System.out.println("El alumno con numero de carnet " + alumno.getCarnet + " está registrado como: " + alumno.getNombre()+"\n");
-        } else {
-System.out.print("Alumno no encontrado, no se puede Mostrar.");
-       }
+    //Método para buscar alumno por medio de su numero de carnet
+    public static void BuscarAlumno(){
+     boolean validarAlumno = false;
+
+        while(!validarAlumno){
+            System.out.print("Ingrese el número de carnet del alumno que desea buscar: ");
+            String carnetAlumnoinput = input.nextLine();
+
+            //No necesita iterar, el tipo HashMap permite borrar directamente por clave
+            if (alumnosMap.containsKey(carnetAlumnoinput)){
+                String carnetBuscado = alumnosMap.get(carnetAlumnoinput).getCarnet();
+                String nombreBuscado = alumnosMap.get(carnetAlumnoinput).getName();
+                System.out.println("\nCarnet: "+ carnetBuscado + " | " + "Nombre: " + nombreBuscado + "\n");
+                validarAlumno = true;
+            }else {
+                System.out.println("Alumno no encontrado. Pruebe de nuevo.");
+            }
+        }
     }
 }
