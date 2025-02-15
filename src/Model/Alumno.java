@@ -1,11 +1,20 @@
 package Model;
 
 public class Alumno {
-    private String carnet;
     private String name;
+    private String carnet;
 
+    // Constructor arreglado
     public Alumno(String carnet, String name) {
         this.carnet = carnet;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -13,7 +22,7 @@ public class Alumno {
         return carnet;
     }
 
-    public String getName() {
-        return name;
+    public void setCarnet(String carnet) {
+        this.carnet = carnet;
     }
 }
